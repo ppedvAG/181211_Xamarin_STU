@@ -14,13 +14,18 @@ namespace HalloXForms
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             // "MessageBox" in Xamarin.Forms
 
-            // Variante 1:
-            DisplayAlert("Eine Nachricht nur für dich", "Hallo Welt", "OK");
+            // Variante 1: [OK]
+            await DisplayAlert("Eine Nachricht nur für dich", "Hallo Welt", "OK");
 
+            // Variante 2: [JA] [NEIN]
+            bool erg = await DisplayAlert("Eine Nachricht nur für dich", "Hallo Welt", "Ja","Nein");
+
+            // Variante 3: [X],[Y],[Z] -- viele
+            string auswahl = await DisplayActionSheet("Wähle dein Obst", "Ok", "Abbrechen", "Apfel", "Birne", "Banane", "Ananas");
         }
     }
 }

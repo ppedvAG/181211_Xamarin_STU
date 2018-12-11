@@ -4,13 +4,44 @@
              xmlns:local="clr-namespace:HalloXForms"
              x:Class="HalloXForms.MainPage">
     <StackLayout>
-        
         <!-- Beschriftung -->
         <Label Text="Hallo Welt"/>
         
         <!-- Button -->
         <!-- WIN + . -->
         <Button Text="Klick mich !" Clicked="Button_Clicked"/>
+        
+        <!--TextBox -->
+        <Entry Placeholder="Username" Keyboard="Numeric"/>
+        <Entry Placeholder="Passwort" IsPassword="True"/>
+        <!-- Mehrzeilige Textbox-->
+        <Editor HeightRequest="100"/>
+        
+        <!-- Checkbox -->
+        <Switch IsToggled="True"/>
+        
+        <!-- ComboBox -->
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+                <x:String>Orange</x:String>
+                <x:String>Ananas</x:String>
+                <x:String>Mandarine</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker/>
+        <TimePicker/>
 
+        <Slider Minimum="0" Maximum="100" Value="50"/>
+        <!-- progressbar geht von 0 bis 1 -->
+        <ProgressBar Progress="0.7"/>
+        <Stepper Minimum="0" Maximum="10" Increment="2"/>
+        <BoxView BackgroundColor="Firebrick" HeightRequest="10"/>
+
+        <ActivityIndicator IsRunning="True"/>
+
+        <Image Source="http://www.zooroyal.de/magazin/wp-content/uploads/2017/04/hamster-760x560.jpg" />
     </StackLayout>
 </ContentPage>
