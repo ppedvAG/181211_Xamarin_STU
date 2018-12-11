@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HalloXForms"
              x:Class="HalloXForms.MainPage">
-
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        
+        <!-- Beschriftung -->
+        <Label Text="Hallo Welt"/>
+        
+        <!-- Button -->
+        <!-- WIN + . -->
+        <Button Text="Klick mich !" Clicked="Button_Clicked"/>
 
+    </StackLayout>
 </ContentPage>

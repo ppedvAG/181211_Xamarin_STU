@@ -13,5 +13,14 @@ namespace HalloXForms
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            // "MessageBox" in Xamarin.Forms
+
+            // Variante 1:
+            DisplayAlert("Eine Nachricht nur für dich", "Hallo Welt", "OK");
+
+        }
     }
 }
