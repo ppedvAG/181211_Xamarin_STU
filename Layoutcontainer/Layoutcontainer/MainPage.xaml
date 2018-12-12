@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Layoutcontainer"
+             x:Class="Layoutcontainer.MainPage"
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Double x:Key="textGröße">22</x:Double>
+            
+            <!-- Expliziter Style-->
+            <Style TargetType="Button" x:Key="defaultButtonStyle">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="BackgroundColor" Value="LemonChiffon"/>
+                <Setter Property="TextColor" Value="DeepSkyBlue"/>
+                <Setter Property="BorderRadius" Value="15"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+            
+            <!-- Impliziter Style -->
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="50"/>
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+                <Setter Property="TextColor" Value="DarkMagenta"/>
+                <Setter Property="BorderRadius" Value="50"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <!-- Padding="links,oben,rechts,unten" -->
+    <!-- Padding="linksrechts,obenunten" -->
+    <!-- Padding="alleRichtungen" -->
+    <!--<StackLayout
+        Spacing="20"
+        Orientation="Vertical"
+        Padding="20"
+        x:Name="stackLayoutRoot" BackgroundColor="DodgerBlue">
+        <Label Text="Welcome to Xamarin.Forms!"
+               BackgroundColor="Khaki"
+               TextColor="Crimson"
+               HorizontalTextAlignment="Center"/>
+        
+        <Button Text="Klick mich"
+                HorizontalOptions="Center"/>
+        
+        <Entry Placeholder="Gib etwas ein..."/>
+        <Button Text="Bestätigen"
+                VerticalOptions="FillAndExpand"/>
+    </StackLayout>-->
+
+    <!--<Grid BackgroundColor="DeepPink"
+          RowSpacing="10"
+          ColumnSpacing="10"
+          Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Text="MeinButton" Font="30" Padding="20"/>
+        <Button Grid.Column="1" Text="MeinButton" Font="30" Padding="20"/>
+        <Button Grid.Column="2" Text="MeinButton" Font="30" Padding="20"/>
+        <BoxView BackgroundColor="LightGreen"
+                 Grid.Row="1"/>
+        <BoxView BackgroundColor="MidnightBlue"
+                 Grid.Row="2"/>
+        <StackLayout BackgroundColor="LawnGreen"
+              Grid.Row="2" Grid.Column="1"
+              Grid.ColumnSpan="2">
+            <Button Text="Button1"/>
+            <Button Text="Button1"/>
+            <Button Text="Button1"/>
+            <Button Text="Button1"/>
+            <Button Text="Button1"/>
+        </StackLayout>
+    </Grid>-->
+
+    <!--<Grid Padding="40"
+          RowSpacing="15"
+          ColumnSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        --><!--<Grid.Resources>
+            <ResourceDictionary>
+                <x:Double x:Key="textGröße">50</x:Double>
+            </ResourceDictionary>
+        </Grid.Resources>--><!--
+
+        <Label Text="1234" FontSize="35" TextColor="White"
+               Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+        <Button Text="1" Grid.Row="1" Grid.Column="0" BackgroundColor="Orange" FontSize="{StaticResource textGröße}" TextColor="Black" BorderRadius="30"/>
+        <Button Text="2" Grid.Row="1" Grid.Column="1" BackgroundColor="Orange" FontSize="{StaticResource textGröße}" TextColor="Black" BorderRadius="30"/>
+        <Button Text="3" Grid.Row="1" Grid.Column="2" BackgroundColor="Orange" FontSize="{StaticResource textGröße}" TextColor="Black" BorderRadius="30"/>
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource defaultButtonStyle}"/>
+        <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource defaultButtonStyle}"/>
+        <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource defaultButtonStyle}"/>
+    
+        <Button Text="7" Grid.Row="3" Grid.Column="0"/>
+        <Button Text="8" Grid.Row="3" Grid.Column="1"/>
+        <Button Text="9" Grid.Row="3" Grid.Column="2"/>
+
+        <Button Text="0" Grid.Row="4" Grid.Column="1" BackgroundColor="White" TextColor="Black" BorderRadius="30"/>
+        <Button Text="Dial" Grid.Row="5" Grid.ColumnSpan="3" Clicked="Button_Clicked"/>
+
+
+    </Grid>-->
+
+    <!-- AbsoluteLayout.LayoutBounds="x,y,width,height" -->
+    <!-- Alle Werte können Proportional (0-1) angegeben werden-->
+    
+    <!--<AbsoluteLayout>
+        <BoxView BackgroundColor="Linen"
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.5"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="GreenYellow"
+                 AbsoluteLayout.LayoutBounds="20,20,100,100"/>
+        <BoxView BackgroundColor="Firebrick"
+                 AbsoluteLayout.LayoutBounds="50,50,100,100"/>
+
+        <BoxView BackgroundColor="Orchid"
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.5"
+                 AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>-->
+
+    <RelativeLayout>
+        <BoxView x:Name="boxViewHeader" BackgroundColor="LightBlue"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression 
+                                 Type=RelativeToParent,
+                                 Property=Width,
+                                 Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                 Type=RelativeToParent,
+                                 Property=Height,
+                                 Factor=0.3}"/>
+
+        <BoxView BackgroundColor="Olive" HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                 Type=RelativeToView,
+                                 ElementName=boxViewHeader,
+                                 Property=Height,
+                                 Constant=-50}"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-50}"/>
+
+
+
+    </RelativeLayout>
+    
+</ContentPage>

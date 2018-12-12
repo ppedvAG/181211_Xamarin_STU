@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("HelloKitten.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Layoutcontainer.Droid.Resource", IsApplication=true)]
 
-namespace HelloKitten.Droid
+namespace Layoutcontainer.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace HelloKitten.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::HelloKitten.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Layoutcontainer.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
