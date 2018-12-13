@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM_ToDoListe"
+             xmlns:vm="clr-namespace:MVVM_ToDoListe.ViewModels"
+             x:Class="MVVM_ToDoListe.MainPage">
+<!-- ViewModel => Neue Standardquelle für das Binding -->
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="10">
+        <Button Text="ToDo-Liste laden" Command="{Binding GetToDoItemCommand}"/>
+        <ListView ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!-- In einem Template ist das ToDoItem die neue Standarddatenquelle -->
+                    <TextCell Text="{Binding Title}" Detail="{Binding Id}" />
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
