@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBindingDemo"
+             x:Class="DataBindingDemo.MainPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:Farbkonverter x:Key="farbkonverter"/>
+            <local:FaktorKonverter x:Key="faktorkonverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center">
+        <Slider x:Name="sliderWert" Maximum="100" Minimum="0"/>
+        <Label x:Name="labelWert"
+               Text="{Binding Source={Reference sliderWert},Path=Value,
+                      StringFormat='Wert ist: {0}'}"/>
+        <Entry x:Name="entryFaktor" Placeholder="Faktor" Text="100"/>
+        <Label x:Name="labelWert2"
+               Text="{Binding Source={Reference sliderWert},Path=Value,
+                      Converter={StaticResource faktorkonverter},
+                      ConverterParameter={Reference entryFaktor},
+                      StringFormat='Das Mehrfache ist: {0}'}"/>
+        <Entry x:Name="entryFarbe"
+               Text="Blue"
+               Placeholder="Gib eine Farbe ein:"/>
+        <BoxView HeightRequest="100" WidthRequest="100"
+                 BackgroundColor="{Binding Source={Reference entryFarbe},
+                                           Path=Text,
+                                           Converter={StaticResource farbkonverter}}"/>
+        
+
+    </StackLayout>
+
+</ContentPage>
