@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DatenSpeichernUndLaden"
+             x:Class="DatenSpeichernUndLaden.MainPage">
+
+    <StackLayout VerticalOptions="Center">
+        <Entry x:Name="entryText" Placeholder="Text zum speichern..."/>
+        <Button x:Name="buttonSpeichern" Text="Speichern" Clicked="ButtonSpeichern_Clicked"/>
+        <Button x:Name="buttonLaden" Text="Laden" Clicked="ButtonLaden_Clicked"/>
+
+        <Entry x:Name="entryVorname" Placeholder="Vorname"/>
+        <Entry x:Name="entryNachname" Placeholder="Nachname"/>
+        <Button x:Name="buttonDBEinfügen" Text="In DB einfügen" Clicked="ButtonDBEinfügen_Clicked"/>
+        <ListView x:Name="listViewPersonen"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Vorname}" Detail="{Binding ID}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+        <Button Text="Refresh nur für UWP">
+            
+            <Button.IsVisible>
+                <OnPlatform iOS="false" Android="false" UWP="true"/>
+            </Button.IsVisible>
+            
+            <Button.BackgroundColor>
+                <OnIdiom Phone="Red" Tablet="Green" Desktop="Blue"/>
+            </Button.BackgroundColor>
+            
+        </Button>
+
+    </StackLayout>
+
+</ContentPage>

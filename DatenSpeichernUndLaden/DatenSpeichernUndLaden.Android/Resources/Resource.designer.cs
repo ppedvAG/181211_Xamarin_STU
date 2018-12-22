@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MVVM_ToDoListe.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("DatenSpeichernUndLaden.Droid.Resource", IsApplication=true)]
 
-namespace MVVM_ToDoListe.Droid
+namespace DatenSpeichernUndLaden.Droid
 {
 	
 	
@@ -26,7 +26,7 @@ namespace MVVM_ToDoListe.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MVVM_ToDoListe.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::DatenSpeichernUndLaden.Droid.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
